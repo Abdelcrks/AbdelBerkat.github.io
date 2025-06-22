@@ -1,0 +1,30 @@
+
+body{
+    background-color: rgb(126, 246, 174);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Helvetica;
+    flex-direction: column; 
+
+    display: flex;
+}
+h1{
+    font-size: 50px;
+}
+#range{
+    font-size: 20px;
+}
+#msgWin,#msgLoose,#rejouer{
+    display: none;
+}
+#rejouer {
+    margin: 20px auto; /* auto horizontal, 20px vertical */
+  }
+#msgWin {
+    font-size: 40px;
+}
+
+#gif{
+    display: none;
+}
