@@ -1,0 +1,35 @@
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+  }
+  
+body{
+    font-family: "share Tech Mono", monospace;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+#container{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+h1{
+    font-family: "Orbitron", sans-serif;
+    font-size: 5rem;
+
+}
+
