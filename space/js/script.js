@@ -7,14 +7,21 @@ const divContainer = document.getElementById("container")
 const divLoad = document.getElementById("loading")
 const form = document.getElementById("planet-form")
 const btnHomePage= document.getElementById("accueil")
+const descriptionDiv = document.getElementById("planet-description")
+const planetImageDiv = document.getElementById("planet-image")
+;
 //console.log(form)
+
 
 form.addEventListener("submit", (event) => {
     event.preventDefault()
-    divContainer.innerHTML = ""
+    descriptionDiv.innerHTML = ""
+    planetImageDiv.innerHTML = ""
     const input = document.getElementById("input-search").value
     //console.log(input)
     descriptionFetch(input)
+    //unplashFetch(input)
+    showPlanet(input)
 })
 
 const descriptionFetch = async (input) => {
@@ -27,7 +34,7 @@ const descriptionFetch = async (input) => {
         
 
         const description = document.createElement("p")
-        divContainer.appendChild(description)
+        descriptionDiv.appendChild(description)
         description.innerHTML = data.extract
     }
     catch(error){
@@ -43,7 +50,44 @@ const loadingApi = () => {
     return loading
 }
 
-btnHomePage.addEventListener("click", () => {
 
-})
+// const unplashFetch = async (input) => {
+//     try {
+//         const response = await fetch(`https://api.unsplash.com/search/photos?query=${input}&client_id=qP1MEZBV35jy7MuCkjFL68XnIw3VAIPXQ_mePY60hU4
+//         `)
+//         const data = await response.json()
+//         const photo = data.results[0]
+//         const img = document.createElement("img")
+//         img.src= photo.urls.regular
+         
+//         const attribution = document.createElement("p");
+//         attribution.innerHTML = `Photo de <a href="${photo.user.links.html}" target="_blank">${photo.user.name}</a> sur <a href="https://unsplash.com" target="_blank">Unsplash</a>`;
+
+//         planetImageDiv.appendChild(img);
+//         planetImageDiv.appendChild(attribution);
+//     }
+//     catch(error){
+//         console.log("error unsplash")
+//     }
+// }
+
+ btnHomePage.addEventListener("click", () => {
+    form.style.display = "none"
+    loading.style.display = "none"
+    
+ })
+
+
+
+function showPlanet(name) {
+  planetImageDiv.innerHTML = "" // Reset
+  const img = document.createElement("img")
+  img.src = `img/planets/${name.toLowerCase()}.png`
+  planetImageDiv.appendChild(img)
+
+  // Force reflow + animation
+  planetImageDiv.classList.remove("visible")
+  void planetImageDiv.offsetWidth // Trick
+  planetImageDiv.classList.add("visible")
+}
 
