@@ -65,7 +65,7 @@ const loadingApi = () => {
     divLoad.innerHTML=""
     const loading = document.createElement("p")
     divLoad.appendChild(loading)
-    loading.innerText = "chargement en cours ... 🚀"
+    loading.innerText = "décollage en cours ... 🚀"
     return loading
 }
 
@@ -89,9 +89,6 @@ const loadingApi = () => {
 //         console.log("error unsplash")
 //     }
 // }
-
-
-
 
 
 
