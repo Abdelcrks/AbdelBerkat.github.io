@@ -7,13 +7,61 @@
     z-index: -1;
     background: black;
   }
-  
+
 body{
     font-family: "share Tech Mono", monospace;
     color: white;
     text-align: center;
     width: 100%;
     font-size: 1.2rem;
+}
+
+/* Positionne la navbar en haut à droite */
+.navbar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Style du menu hamburger */
+.hamburger-menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Chaque barre */
+.hamburger-menu span {
+  display: block;
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  margin-bottom: 6px;
+  border-radius: 10px;
+}
+
+/* Cacher la nav au début */
+.nav-links {
+  display: none;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* Classe qui affiche le menu quand activé */
+.nav-links.open {
+  display: block;
+}
+
+/* Liens de navigation */
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
 }
 
 #container{
@@ -27,12 +75,53 @@ body{
     padding: 2rem;
     text-align: center;
 }
-h1{
-    font-family: "Orbitron", sans-serif;
-    font-size: 5rem;
-
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  background: linear-gradient(90deg,#aca9bb, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+
+
+#button-form {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2em;
+  transition: transform 0.5s ease;
+}
+
+#button-form img {
+  width: 45px;
+  transition: transform 0.5s ease, filter 0.5s;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+#button-form:hover img {
+  transform: translateY(-10px) scale(1.1);
+  filter: drop-shadow(0 0 10px #00ffff);
+}
+
+
+#input-search {
+  background-color: #1e1e3f;
+  color: white;
+  border: 1px solid #888;
+  border-radius: 10px;
+  padding: 0.8em 1.2em;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+
+#planet-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 #planet-image img {
     max-width: 80%;
@@ -42,8 +131,8 @@ h1{
 }
 
 #planet-image img {
-    width: 2000px;
-    animation: rotation 20s linear infinite;
+    width: 1000px;
+    animation: rotation 230s linear infinite;
   }
   
   @keyframes rotation {
@@ -53,8 +142,8 @@ h1{
 
   #planet-image {
     opacity: 0;
-    transform: scale(0.5);
-    transition: opacity 1s ease, transform 1s ease;
+    transform: scale(3);
+    transition: opacity 3s ease, transform 3s ease;
   }
   
   #planet-image.visible {

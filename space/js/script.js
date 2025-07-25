@@ -1,7 +1,15 @@
+
+// =======================
+// 🚀 Chargement script particles 
+// =======================
+
 particlesJS.load('particles-js', 'js/particles-config.json', function () {
     console.log('particles.js loaded 🚀')
   })
 
+// =======================
+// 🚀 Element html
+// =======================
 
 const divContainer = document.getElementById("container")
 const divLoad = document.getElementById("loading")
@@ -9,8 +17,11 @@ const form = document.getElementById("planet-form")
 const btnHomePage= document.getElementById("accueil")
 const descriptionDiv = document.getElementById("planet-description")
 const planetImageDiv = document.getElementById("planet-image")
-;
 //console.log(form)
+
+// =======================
+// 🚀 Formulaire > evenement
+// =======================
 
 
 form.addEventListener("submit", (event) => {
@@ -23,6 +34,10 @@ form.addEventListener("submit", (event) => {
     //unplashFetch(input)
     showPlanet(input)
 })
+
+// =======================
+// 🚀 description Api Wiki
+// =======================
 
 const descriptionFetch = async (input) => {
     try{
@@ -41,6 +56,10 @@ const descriptionFetch = async (input) => {
         console.log("erreur")
     }
 }
+
+// =======================
+// 🚀 Chargement api
+// =======================
 
 const loadingApi = () => {
     divLoad.innerHTML=""
@@ -71,13 +90,14 @@ const loadingApi = () => {
 //     }
 // }
 
- btnHomePage.addEventListener("click", () => {
-    form.style.display = "none"
-    loading.style.display = "none"
-    
- })
 
 
+
+
+
+// =======================
+// 🚀 Image planète
+// =======================
 
 function showPlanet(name) {
   planetImageDiv.innerHTML = "" // Reset
@@ -91,3 +111,14 @@ function showPlanet(name) {
   planetImageDiv.classList.add("visible")
 }
 
+
+// =======================
+// 🚀 Menu Hamburger
+// =======================
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});

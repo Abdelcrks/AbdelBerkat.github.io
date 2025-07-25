@@ -13,18 +13,32 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#homepage">Accueil</a></li>
+            <li><a href="#planetes">Planètes</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="../index.html">Portfolio</a></li>
+        </ul>
+    </nav>
     <div id="container">
         <div id="particles-js"></div>
         <h1>Space explorer</h1>
         <form id="planet-form">
-            <label for="input-search">planète</label>
+            <label for="input-search"  style="display: none;">planète</label>
             <input id="input-search" type="text" placeholder="ex : Saturne">
-            <button id="button-form">Aller</button>
-            <button id="accueil">Accueil</button>
+            <button id="button-form" title="Lancer l’exploration" aria-label="Lancer l’exploration">
+                <img src="img/rocket.svg" alt="" />
+            </button>
         </form>
-    <div id="loading"></div>
-    <div id="planet-description"></div>
-    <div id="planet-image"></div>
+        <div id="loading"></div>
+        <div id="planet-description"></div>
+        <div id="planet-image"></div>
     </div>
 </body>
 
