@@ -1,0 +1,23 @@
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(180deg, #0b0c2a, #1a1433, #3a345b);
+  }
+  
+  #container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  

@@ -1,0 +1,39 @@
+/* base.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+@import url('navbar.css');
+@import url('layout.css');
+@import url('form.css');
+@import url('planets.css');
+@import url('animations.css');
+
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: #d1d1e9;
+  text-align: center;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #000010;
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  background: linear-gradient(90deg, #9a9ce3, #d3d4ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #6c63ff66, 0 0 20px #00cfd144;
+  animation: glowFade 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowFade {
+  0% {
+    text-shadow: 0 0 10px #6c63ff66, 0 0 20px #00cfd144;
+  }
+  100% {
+    text-shadow: 0 0 20px #6c63ff99, 0 0 40px #00cfd199;
+  }
+}
