@@ -27,15 +27,12 @@ const homePageBtn = document.getElementById("homePageBtn")
 form.addEventListener("submit", (event) => {
     event.preventDefault()
     const input = document.getElementById("input-search").value
-
     descriptionDiv.innerHTML = ""
     planetImageDiv.innerHTML= "" 
     divLoad.innerHTML= "" 
     descriptionWikipediaFetch(input)
     showPlanet(input)
-
 })
-
 
 
 //
@@ -61,20 +58,36 @@ const descriptionWikipediaFetch = async (input) => {
         const search = wikiOther(input)
         const response = await fetch(`https://fr.wikipedia.org/api/rest_v1/page/summary/${search.toLowerCase()}`)
         const data = await response.json()
-        //console.log(data)
         loading.style.display = "none"
+        createDescription(data)
+        return data 
         
-
-        const description = document.createElement("p")
-        descriptionDiv.appendChild(description)
-        description.innerHTML = data.extract
     }
     catch(error){
         console.log(error, "erreur")
     }
 }
 
+const createDescription = (data)=> {
+        const paragraph = document.createElement("p")
+        paragraph.innerHTML = data.extract
+        descriptionDiv.appendChild(description)
+        
+}
+///
+/// Deuxieme api pour le reste de la description 
+///
+const descriptionSystemSolaireFetch = async (input) => {
+  try{
+    const response = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/${input.toLowerCase()}`)
+    const data = await response.json()
+    return data
 
+  }
+  catch(err){
+    console.log("erreur", err)
+  }
+}
 
 // =======================
 // 🚀 Chargement api
@@ -121,17 +134,3 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-///
-/// Deuxieme api pour le reste de la description 
-///
-const descriptionSystemSolaireFetch = async (input) => {
-  try{
-    const response = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/${input.toLowerCase()}`)
-    const data = await response.json()
-    return data
-
-  }
-  catch(err){
-    console.log("erreur", err)
-  }
-}
