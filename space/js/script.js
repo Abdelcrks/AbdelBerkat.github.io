@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
 const descriptionFetch = async (input) => {
     try{
         const loading = loadingApi()
-        const response = await fetch(`https://fr.wikipedia.org/api/rest_v1/page/summary/${input}`)
+        const response = await fetch(`https://fr.wikipedia.org/api/rest_v1/page/summary/${input.toLowerCase()}%20(planète)`)
         const data = await response.json()
         //console.log(data)
         loading.style.display = "none"
