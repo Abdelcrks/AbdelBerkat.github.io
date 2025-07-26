@@ -76,7 +76,6 @@ body{
     text-align: center;
 }
 h1 {
-  margin-top: -150px;
   font-family: "Orbitron", sans-serif;
   font-size: 5rem;
   background: linear-gradient(90deg,#aca9bb, #ffffff);
@@ -123,32 +122,29 @@ h1 {
 }
 
 
-
-
-#planet-image img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 1rem;
-    margin-top: 2rem;
+.planetAnimation {
+  opacity: 0;
+  transform: scale(3);
+  transition: opacity 3s ease, transform 3s ease;
+  display: flex;
+  justify-content: center;
 }
 
-#planet-image img {
-    width: 1000px;
-    animation: rotation 230s linear infinite;
-  }
-  
-  @keyframes rotation {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+.planetAnimation.visible {
+  opacity: 1;
+  transform: scale(1);
+}
 
-  #planet-image {
-    opacity: 0;
-    transform: scale(3);
-    transition: opacity 3s ease, transform 3s ease;
-  }
-  
-  #planet-image.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
+.planetAnimation img {
+  max-width: 80%;
+  width: 1000px;
+  height: auto;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  animation: rotation 230s linear infinite;
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
