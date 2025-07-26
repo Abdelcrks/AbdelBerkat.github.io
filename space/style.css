@@ -76,6 +76,7 @@ body{
     text-align: center;
 }
 h1 {
+  margin-top: -150px;
   font-family: "Orbitron", sans-serif;
   font-size: 5rem;
   background: linear-gradient(90deg,#aca9bb, #ffffff);
@@ -84,7 +85,12 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-
+#planet-form {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 #button-form {
   background: none;
@@ -108,20 +114,16 @@ h1 {
 
 #input-search {
   background-color: #1e1e3f;
-  color: white;
-  border: 1px solid #888;
+  color: #aca9bb;
+  border: none;
   border-radius: 10px;
   padding: 0.8em 1.2em;
-  font-size: 1rem;
+  font-size: 1.2rem;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 
-#planet-form {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+
 
 #planet-image img {
     max-width: 80%;
