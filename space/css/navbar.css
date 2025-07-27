@@ -19,7 +19,7 @@
     display: block;
     height: 4px;
     width: 30px;
-    background-color: white;
+    background-color: #d1d1e9;
     margin-bottom: 6px;
     border-radius: 10px;
   }
@@ -41,7 +41,7 @@
   
   /* Liens de navigation */
   .nav-links li a {
-    color: white;
+    color: #d1D1e9;
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
   }
