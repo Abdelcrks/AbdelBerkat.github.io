@@ -46,13 +46,33 @@ const descriptionWikipediaFetch = async (input) => {
         const search = wikiOther(input)
         const response = await fetch(`https://fr.wikipedia.org/api/rest_v1/page/summary/${search.toLowerCase()}`)
         const data = await response.json()
+
+        
+        if (data.title === "Not found" || !data.extract) {
+          loading.style.display = "none"
+          notFoundPlanet()
+          return
+        }
         loading.style.display = "none"
         createDescription(data)
-        return data 
+        return data
     }
     catch(error){
         console.log(error, "erreur")
     }
+}
+
+
+// ==================================
+// Aucune planète existante à ce jour
+// ==================================
+
+const notFoundPlanet = () => {
+  loading.style.display= "none"
+  const paragraphNotFoundPlanet = document.createElement("p")
+  descriptionDiv.appendChild(paragraphNotFoundPlanet)
+  paragraphNotFoundPlanet.classList.add("error-message")
+  paragraphNotFoundPlanet.innerHTML= "Merci de taper une planète existante  du système solaire. 🪐"
 }
 
 // ===========================================================
