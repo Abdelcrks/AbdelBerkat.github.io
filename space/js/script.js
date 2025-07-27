@@ -17,6 +17,7 @@ const descriptionDiv = document.getElementById("planet-description")
 const planetImageDiv = document.getElementById("planet-image")
 const homePageBtn = document.getElementById("homePageBtn")
 const inputSearch = document.getElementById("input-search")
+
 //console.log(form)
 
 // =======================
@@ -177,3 +178,22 @@ hamburger.addEventListener("click", () => {
 // ===================
 // création d'étoiles
 // ==================
+
+const createStar = () => {
+  const star = document.createElement("div")
+  star.classList.add("shooting-star")
+
+  const directions = ["top-left", "top-right", "bottom-left", "bottom-right"]
+  const direction = directions[Math.floor(Math.random() * directions.length)]
+  star.classList.add(direction)
+
+  const containerStar = document.getElementById("shooting-stars")
+  containerStar.appendChild(star)
+
+  setTimeout(() => {
+    star.remove()
+  }, 3000)
+}
+
+setInterval(createStar, 5000)
+
