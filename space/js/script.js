@@ -17,8 +17,8 @@ const descriptionDiv = document.getElementById("planet-description")
 const planetImageDiv = document.getElementById("planet-image")
 const homePageBtn = document.getElementById("homePageBtn")
 const inputSearch = document.getElementById("input-search")
-
-//console.log(form)
+const switchBackground = document.getElementById("themeToggle")
+//console.log(switchBackground)
 
 // =======================
 // 🚀 Formulaire > evenement
@@ -197,3 +197,11 @@ const createStar = () => {
 
 setInterval(createStar, 5000)
 
+
+///
+/// switch background
+///
+
+switchBackground.addEventListener("change", () => {
+  document.body.classList.toggle("day-theme")
+})
