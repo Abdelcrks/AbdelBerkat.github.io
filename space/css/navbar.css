@@ -1,6 +1,6 @@
 /* Positionne la navbar en haut à droite */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
