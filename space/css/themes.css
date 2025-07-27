@@ -1,0 +1,93 @@
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    border: 2px solid #8b9cf1;
+    box-shadow: 0 0 20px #8b9cf1;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: white;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .switch input:checked + .slider {
+    box-shadow: 0 0 20px #ffae8b;
+    border: 2px solid #f5b48a;
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(1.5em);
+  }
+
+
+/* lever de soleil spatial */
+body.day-theme {
+    background: linear-gradient(180deg, #1e0f20, #4e1f28, #f5b48a);
+    background-attachment: fixed;
+    color: #4a1f16;
+  }
+  
+  /* Titre */
+  body.day-theme h1 {
+    background: linear-gradient(90deg, #ffd8b1, #ffae8b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #ffd8b166, 0 0 20px #ffae8b44;
+  }
+  
+  
+  
+  /* Texte général */
+  body.day-theme p,body.day-theme #planet-description li {
+  color: #ffb48a;
+}
+
+  body.day-theme input {
+    background-color: #fff6f1;
+    color: #3a1f1f;
+    border: 1px solid #ffb993;
+  }
+  
+  body.day-theme .hamburger-menu span {
+    background-color: #ffb48a;
+  }
+
+  body.day-theme  #input-search {
+    background-color: #fbe6e3;
+    color: #4b1c1c;
+    border: 1px solid #ffb085;
+    box-shadow: 0 0 8px #ffae8b;
+  }
+
+  body.day-theme #input-search::placeholder {
+    color: #4b1c1c;
+  }
