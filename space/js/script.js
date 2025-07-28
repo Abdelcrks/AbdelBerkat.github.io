@@ -100,9 +100,8 @@ const createDescription = (data)=> {
         
 }
 
-///
-/// affiche lettre par lettre
-///
+
+
 
 
 
@@ -172,9 +171,11 @@ function showPlanet(name) {
 
   const img = document.createElement("img");
   img.src = `img/planets/${name.toLowerCase()}.png`;
+  img.classList.add("imgWheel")
 
   animation.appendChild(img);
   planetImageDiv.appendChild(animation);
+
 
   // Reflow forcé pour déclencher la transition
   void animation.offsetWidth;
@@ -190,7 +191,7 @@ function showPlanet(name) {
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
-hamburger.addEventListener("click", () => {
+hamburger.addEventListener("mouseover", () => {
   navLinks.classList.toggle("open");
 });
 
@@ -218,9 +219,9 @@ const createStar = () => {
 setInterval(createStar, 5000)
 
 
-///
+/// =================
 /// switch background
-///
+/// =================
 
 switchBackground.addEventListener("change", () => {
   document.body.classList.toggle("day-theme")
